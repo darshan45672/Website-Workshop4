@@ -1,19 +1,6 @@
 # Blog Operations
 
-## 1. Add the session start code
-
-- Paste the below code in `user-info.php` where its mentioned as `Paste Session start code`.
-
-```php
-
-<?php
-    session_start();
-    ob_start();
-?>
-
-```
-
-## 2. Create the blog form to add new blogs
+## 1. Create the blog form to add new blogs
 
 - Paste the below code in `user-info.php` where its mentioned as `Paste the blog form`.
 
@@ -36,7 +23,7 @@
 
 ```
 
-## 3. Create the delete and edit options
+## 2. Create the delete and edit options
 
 - Paste the below code in `user-info.php` where its mentioned as `Delete and edit options`.
 
@@ -52,7 +39,7 @@
 
 ```
 
-## 4. Add the controller call on delete click
+## 3. Add the controller call on delete click
 
 - Paste the below code in `user-info.php` where its mentioned as `on delete click`.
 
@@ -65,7 +52,7 @@
 
 ```
 
-## 5. Add the controller call on posting new blog
+## 4. Add the controller call on posting new blog
 
 - Paste the below code in `user-info.php` where its mentioned as `On posting new blog`.
 
@@ -82,7 +69,7 @@
 
 ```
 
-## 6. Add the controller call for login validation
+## 5. Add the controller call for login validation
 
 - Paste the below code in `user-info.php` where its mentioned as `Login validation call`.
 
@@ -102,7 +89,7 @@
 
 ```
 
-## 7. Fetch blogs based on user
+## 6. Fetch blogs based on user
 
 - Paste the below code in `user-info.php` where its mentioned as `Fetch blogs by that user`.
 
@@ -113,7 +100,7 @@
 
 ```
 
-## 8. Getting the user Id on page load
+## 7. Getting the user Id on page load
 
 - Paste the below code in `user-info.php` where its mentioned as `set userId code`.
 
@@ -128,7 +115,7 @@
 
 ```
 
-## 9. Create method to save the blog into database
+## 8. Create method to save the blog into database
 
 - Paste the below code in `Blogs.php`.
 
@@ -150,7 +137,7 @@
 
 ```
 
-## 10. Create method to delete the blog from database
+## 9. Create method to delete the blog from database
 
 - Paste the below code in `Blogs.php`.
 
@@ -168,7 +155,7 @@
 
 ```
 
-## 11. Add controller method to validate the blog data
+## 10. Add controller method to validate the blog data
 
 - Paste the below code in `BlogsController.php`.
 
@@ -207,7 +194,7 @@
 
 ```
 
-## 12. Add controller method to handle blog deletion
+## 11. Add controller method to handle blog deletion
 
 - Paste the below code in `BlogsController.php`.
 
@@ -223,5 +210,18 @@
         header("Location: user-info.php");
         exit();
     }
+
+```
+
+## 12. Add the session start code
+
+- Paste the below code in `user-info.php` where its mentioned as `Paste Session start code`.
+
+```php
+
+<?php
+    session_start();
+    ob_start();
+?>
 
 ```
