@@ -1,3 +1,5 @@
+<!-- Paste Session start code -->
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -11,19 +13,27 @@
         
         <?php 
             // include the classes and fetch blog and user data to display
-            include './header.php';
             include_once "../includes/classes.php";
             use Blogs\Controller\BlogsController;
             use Blogs\Controller\UsersController;
-        
-            // Fetch user data 
-            $usersControllerObj = new UsersController; 
-            $user_data = $usersControllerObj->fetchUserData($_REQUEST['userId']);
+
+            // set userId code
+
+
+            // On delete click 
+            
+
+            // On posting new blog
+
+
+            // Login validation call
+
 
             // Fetch blogs by that user.
-            $blogsControllerObj = new BlogsController; 
-            list($blogs_count, $blogs) = $blogsControllerObj->fetchBlogsByUser($_REQUEST['userId']);
 
+
+            // load header after setting the session.
+            include './header.php';
         ?>
 
 
@@ -38,7 +48,10 @@
                     <p class="userdata"><?php echo "Joined ".$user_data['created_on'] ?></p>
                 </div>
             </article>
+                
+            <!-- Paste the blog form -->
             
+
             <h2 class="blogs">Blogs <?php echo "(".$blogs_count.")"?></h2>
             <?php foreach ($blogs as $blog) : ?>
                 <article id="<?php echo $blog['blog_id'] ?>">
@@ -60,6 +73,10 @@
                         <div class="content">
                             <p><?php echo $blog['blog_content'] ?></p>
                         </div>
+                        
+                        <!-- Delete and edit options -->
+
+
                     </div>
                 </article>
             <?php endforeach; ?>

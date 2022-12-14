@@ -9,12 +9,12 @@ class UsersController{
     /**
      * Get the user data from model and pass it to front end to display
      */
-    public function fetchUserData($user_id)
+    public function fetchUserData($userId)
     {
         $usersObj = new Users;
-        $user_data = $usersObj->fetchUserById($user_id);
+        $userData = $usersObj->fetchUserById($userId);
 
-        return $user_data[0];
+        return $userData[0];
     }
 
 }

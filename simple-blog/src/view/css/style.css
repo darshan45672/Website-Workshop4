@@ -228,10 +228,80 @@ footer a{
     color: inherit;
     margin: 0 4px;
 }
-/* .blogs{
+.blogs{
     border-bottom: solid rgba(0,0,0,.2) 1px;
     margin-top: 10px;
     padding-bottom: 10px;
     font-size: 1.3rem;
     font-weight: 600;
-} */
+}
+
+form {
+    margin: 10px;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password], input[type=file], textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+/* Set a style for all buttons */
+button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  /* Add a hover effect for buttons */
+button:hover {
+    opacity: 0.8;
+}
+
+/* The "Forgot password" text */
+span.psw {
+    padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+      display: block;
+      float: none;
+    }
+}
+
+b{
+    font-weight: bold;
+}
+.unauthorised{
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+    background-color:red;
+}
+.blogbuttons{
+    background-color: #04AA6D;
+    font-weight: bold;
+    width: 10%;
+    display: inline-block;
+}
+.blogbuttondelete{
+    background-color: #aa0404;
+    font-weight: bold;
+    width: 50%;
+    float: right;
+}
+.blogbuttonedit{
+    background-color: #04AA6D;
+    font-weight: bold;
+    width: 50%;
+}

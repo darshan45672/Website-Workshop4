@@ -15,6 +15,8 @@
             <div id="navbar-example" class="navbar-menu">
                 <div class="navbar-end">
                     <a class="navbar-item is-active" href="index.php">Blog</a>
+                    <!-- paste the menu options below-->
+                    
                 </div>
             </div>
         </div>

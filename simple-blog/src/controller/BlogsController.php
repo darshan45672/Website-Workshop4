@@ -7,19 +7,19 @@ use Blogs\Blogs;
 class BlogsController{
 
 
-public function fetchBlogsData()
-{
-    $blogsObj = new Blogs;
-    $blogs_data = $blogsObj->fetchAllBlogs();
-    if(!is_array($blogs_data)){
-        $blogs_data = array();
+    public function fetchBlogsData()
+    {
+        $blogsObj = new Blogs;
+        $blogs_data = $blogsObj->fetchAllBlogs();
+        if(!is_array($blogs_data)){
+            $blogs_data = array();
+        }
+
+        return $blogs_data;
     }
 
-    return $blogs_data;
-}
 
-
-/**
+    /**
      * Fetches the blogs by the uses from model and returns the total blog count and the data.
      */
     public function fetchBlogsByUser($user_id)
