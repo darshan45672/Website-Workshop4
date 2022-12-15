@@ -37,14 +37,14 @@ Build your own website with our one-day workshop on understanding PHP, Postgres 
     ```
     cd workshop
     ```
- - First fork the repo and clone Website-Workshop3 repo & go inside Webiste-Workshop3 folder
+ - First fork the repo and clone Website-Workshop4 repo & go inside Webiste-Workshop4 folder
     ``` 
-    git clone git@github.com:{yourName}/Website-Workshop3.git
-    cd Website-Workshop3
+    git clone https://github.com/{yourName}/Website-Workshop4.git
+    cd Website-Workshop4
     ```
  - To open folder in VS code editor
     ```
-    cd ~/workshop/Website-Workshop3
+    cd ~/workshop/Website-Workshop4
     code .
     ```
  - Bring up the Simple Blog Container
