@@ -2,7 +2,16 @@
 
 ## 1. Create the login form
 
-- Paste the below code in login.php page within the views folder where its mentioned as `Paste Login Form content below`.
+- Paste the below code in `login.php` file above `Paste the buffer start code here`
+
+```php
+<?php
+    session_start();
+    ob_start();
+?>
+```
+
+- Paste the below code in `login.php` page within the views folder where its mentioned as `Paste Login Form content below`.
 
 ```html
 
@@ -32,7 +41,7 @@
 
 ## 2. Add error check code
 
-- Paste the below code in login.php where its mentioned as `paste the error check code here`
+- Paste the below code in `login.php` where its mentioned as `paste the error check code here`
 
 ```php
 

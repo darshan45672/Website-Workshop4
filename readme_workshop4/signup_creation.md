@@ -2,6 +2,15 @@
 
 ## 1. Create signup form
 
+- Paste the below code in `signup.php` file above `Paste the output buffer start code here`
+
+```php
+<?php
+    session_start();
+    ob_start();
+?>
+```
+
 - Paste the below code in `signup.php` file within the views folder where its mentioned as `Paste Signup Form content below`.
 
 ```html
@@ -138,6 +147,7 @@
 ```php
 
 <?php
+ob_start();
 
 use Blogs\Users;
 
