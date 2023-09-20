@@ -1,3 +1,5 @@
+<!-- Paste the output buffer start code here -->
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -12,7 +14,7 @@
     <?php
         include './header.php';
         include_once "../includes/classes.php";
-        use Blogs\Controller\UsersController;        
+        use Blogs\Controller\UsersController;
 
         // controller call to save the user.
 
@@ -27,7 +29,7 @@
     <!-- Ajax validation script -->
     
 
-    <?php 
+    <?php
         include './footer.php';
     ?>
     </body>
