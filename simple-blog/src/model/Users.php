@@ -29,5 +29,44 @@ class Users extends Connection{
         return $user_data;
     }
 
+
+/**
+     * Method to fetch data based on username and sha256 encrypted password
+     */
+    public function fetchByUserNamePassword($userName, $password){
+        //query
+        $query = "SELECT user_id, first_name, last_name, username, (to_char(created_on, 'Mon DD, YYYY')) as created_on, profession, profile_pic FROM users WHERE username = '$userName' AND user_password = '$password'";
+
+        $user_data = $this->_connection->query($query)->fetchAll();
+
+        return $user_data;
+    }
+
+    /**
+     * method to fetch user count by username to check if he username is already taken.
+     */
+    public function fetchCountByUserName($userName){
+        // query
+        $query = "SELECT count(*) FROM users WHERE username = '$userName'";
+        $user_data = $this->_connection->query($query)->fetch();
+        return $user_data['count'];
+    }
+
+
+    /**
+     * method to save user.
+     */
+    public function save($userData){
+        //query
+        $query = "INSERT INTO users (first_name, last_name, user_password, username, profession) VALUES ('".$userData['fname']."', '".$userData['lname']."', '".$userData['psw']."', '".$userData['uname']."', '".$userData['profession']."')";
+
+        if($this->_connection->exec($query)){
+            return true;
+        };
+
+        return false;
+    }
+
+
 }
 ?>
