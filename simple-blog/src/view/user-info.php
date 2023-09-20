@@ -1,5 +1,13 @@
 <!-- Paste Session start code -->
 
+<?php
+if (isset($_SESSION)) {
+    session_start();
+    ob_start();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,17 +27,54 @@
 
             // set userId code
 
+            if(isset($_REQUEST['userId'])){
+                $userId = $_REQUEST['userId'];
+            }elseif(isset($_SESSION['userId']))
+            {
+                $userId = $_SESSION['userId'];
+            }
+
 
             // On delete click 
             
+            if(isset($_POST['btnDelete'])){
+                $blogsControllerObj = new BlogsController;
+                $blogsControllerObj->deleteBlog($_POST['btnDelete']);
+            }
+
 
             // On posting new blog
+
+            if(isset($_POST['title']) && isset($_POST['content']))
+            {
+                $info = pathinfo($_FILES['image']['name']);
+
+                // Save the blog data
+                $blogsControllerObj = new BlogsController;
+                $blogsControllerObj->saveBlogData($_POST['title'], $_POST['content'], $info);
+            }
 
 
             // Login validation call
 
+            if (isset($_POST['uname']) && isset($_POST['psw'])) {
+                $objUserController = new UsersController;
+                $user_data = $objUserController->validateLogin($_POST['uname'], $_POST['psw']);
+            }elseif(!empty($userId)){
+                // Fetch user data 
+                $usersControllerObj = new UsersController; 
+                $user_data = $usersControllerObj->fetchUserData($userId);
+            }else{
+                header("Location: index.php");
+                exit();
+            }
+
 
             // Fetch blogs by that user.
+
+            $blogsControllerObj = new BlogsController; 
+            list($blogs_count, $blogs) = $blogsControllerObj->fetchBlogsByUser($user_data['user_id']);
+
 
 
             // load header after setting the session.
@@ -50,6 +95,22 @@
             </article>
                 
             <!-- Paste the blog form -->
+
+            <?php if(isset($_SESSION['userId']) && $_SESSION['userId'] == $user_data['user_id']) : ?>
+                <form action="user-info.php" method="post" enctype="multipart/form-data">
+                    <lable for="title"><b>Title</b></label>
+                    <input type="text" placeholder="Blog Title" name="title" required>
+
+                    <lable for="content"><b>Content</b></label>
+                    <textarea placeholder="Blog Content" name="content" required></textarea>
+
+                    <lable for="img"><b>Blog Image</b></label>
+                    <input type="file" accept="image/*" name="image" id="image" required>
+
+                    <button class="blogbuttons" type="submit">Post</button>
+                </form>
+            <?php endif ?>
+
             
 
             <h2 class="blogs">Blogs <?php echo "(".$blogs_count.")"?></h2>
@@ -75,6 +136,15 @@
                         </div>
                         
                         <!-- Delete and edit options -->
+
+                        <?php if(isset($_SESSION['userId']) && $_SESSION['userId'] == $user_data['user_id']) : ?>
+                            <form action="user-info.php" method="post">
+                                <button type="submit" class="blogbuttondelete" id="<?php echo $blog['blog_id'] ?>" onclick="return confirm('Are you sure?')" name="btnDelete" value="<?php echo $blog['blog_id'] ?>">Delete</button>
+
+                                <button type="submit" class="blogbuttonedit" id="<?php echo $blog['blog_id'] ?>" name="btnEdit" onclick="alert('This functionality is assignment')">Edit</button>
+                            </form>
+                        <?php endif ?>
+
 
 
                     </div>
