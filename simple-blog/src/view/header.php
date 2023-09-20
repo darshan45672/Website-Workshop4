@@ -16,6 +16,15 @@
                 <div class="navbar-end">
                     <a class="navbar-item is-active" href="index.php">Blog</a>
                     <!-- paste the menu options below-->
+
+                    <?php if(isset($_SESSION['userId'])) : ?>
+                        <a class="navbar-item is-active" href="user-info.php"><?php echo $_SESSION['userName'] ?></a>
+                        <a class="navbar-item is-active" href="logout.php">Logout</a>
+                    <?php else : ?>
+                        <a class="navbar-item is-active" href="login.php">Login</a>
+                        <a class="navbar-item is-active" href="signup.php">Signup</a>
+                    <?php endif ?>
+
                     
                 </div>
             </div>
