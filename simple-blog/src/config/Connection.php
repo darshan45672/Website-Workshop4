@@ -5,7 +5,7 @@ namespace Connection;
 use Exception;
 use PDO;
 
-class Connection{
+abstract class Connection{
 
     public $_connection = null;
 
