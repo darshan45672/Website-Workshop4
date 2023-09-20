@@ -16,7 +16,7 @@ services:
     build:
       context: ./
       dockerfile: docker/Dockerfile
-    container_name: php
+    container_name: php_8
     env_file:
       - .env
     volumes:
