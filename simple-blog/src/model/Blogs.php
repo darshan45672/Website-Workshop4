@@ -47,5 +47,31 @@ class Blogs extends Connection{
 
         return $user_blogs;
     }
+
+
+    /**
+     * Method to save blog.
+     */
+    public function save($blogData){
+        // insert query
+        $query = "INSERT INTO blogs (blog_title, blog_content, created_by, modified_on, image_path) VALUES ('".$blogData['title']."', '".$blogData['content']."', ".$blogData['createdBy'].", NOW(), '".$blogData['imagePath']."')";
+        
+        if($this->_connection->exec($query)){
+            return true;
+        };
+
+        return false;
+    }
+
+    /**
+     * Method to delete a blog by its id.
+     */
+    public function delete($blogId){
+        // delete query
+        $query = "DELETE FROM blogs where blog_id = $blogId";
+
+        $this->_connection->exec($query);
+    }
+
 }
 ?>
