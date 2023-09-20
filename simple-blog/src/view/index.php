@@ -1,5 +1,13 @@
 <!-- Paste Session Code -->
 
+<?php
+if (isset($_SESSION)) {
+    session_start();
+    ob_start();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
